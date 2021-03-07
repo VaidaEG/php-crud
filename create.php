@@ -20,6 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <h1>New bannana box</h1>
     <a href="<?= URL ?>create.php">Create</a>
+    <a href="<?= URL ?>index.php">Home</a>
     <form action="<?= URL ?>create.php" method="post">
     Bananas in box: <input type="text" name="count">
     <button type="submit">Create</button>

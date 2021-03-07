@@ -32,6 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 <body>
     <h1>Update bannana box ID: <?= $box['id'] ?></h1>
     <a href="<?= URL ?>create.php">Create</a>
+    <a href="<?= URL ?>index.php">Home</a>
     <form action="<?= URL ?>update.php?id=<?= $box['id'] ?>" method="post">
     Bananas in box: <input type="text" value="<?= $box['bannana'] ?>" name="count">
     <button type="submit">Update</button>
