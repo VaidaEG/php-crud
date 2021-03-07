@@ -1,12 +1,5 @@
 <?php
 require __DIR__ . '/bootstrap.php';
-_d(readData());
-_d(getNextId());
-_d(getNextId());
-_d(getNextId());
-_d(getNextId());
-_d(readData());
-_d(getNextId());
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +12,18 @@ _d(getNextId());
 <body>
     <h1>Bannana boxes</h1>
     <a href="<?= URL ?>create.php">Create</a>
-    <a href="<?= URL ?>update.php">Update</a>
+    <a href="<?= URL ?>index.php">Home</a>
+    <ul>
+    <?php foreach (readData() as $box) : ?>
+        <li>
+        <span>ID: <?= $box['id'] ?></span>
+        <span>Count: <?= $box['bannana'] ?></span>
+        <button type="submit"><a style="text-decoration: none; color: black;" href="<?= URL ?>update.php?id=<?= $box['id'] ?>">EDIT</a></button>
+        <form action="<?= URL ?>delete.php?id=<?= $box['id'] ?>" method="post">
+        <button type="submit">DELETE</button>
+        </form>
+        </li>
+    <?php endforeach ?>
+    </ul>
 </body>
 </html>
